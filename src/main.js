@@ -100,7 +100,9 @@ document.querySelectorAll("[data-contact]").forEach((element) => {
 
 const socialRow = document.querySelector("#socialRow");
 const socialLinks = [["Email", `mailto:${links.email}`], ["GitHub", links.github], ["LinkedIn", links.linkedin], ["LeetCode", links.leetcode], ["Instagram", links.instagram]];
-socialRow.innerHTML = socialLinks.filter(([, url]) => url).map(([label, url]) => `<a href="${url}" ${url.startsWith("mailto:") ? "" : 'target="_blank" rel="noreferrer"'}><span>${label}</span><span aria-hidden="true">↗</span></a>`).join("");
+socialRow.innerHTML = socialLinks.map(([label, url]) => url
+  ? `<a href="${url}" ${url.startsWith("mailto:") ? "" : 'target="_blank" rel="noreferrer"'}><span>${label}</span><span aria-hidden="true">↗</span></a>`
+  : `<span class="social-pending" aria-label="${label} link to be added"><span>${label}</span><small>Add URL</small></span>`).join("");
 
 const dialog = document.querySelector("#projectDialog");
 const dialogLink = document.querySelector("#dialogLink");

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Suman Patari's visual gallery — projects, events, and moments, newest first." />
+    <meta name="theme-color" content="#f7f9fc" />
+    <title>Gallery — Suman Patari</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/gallery.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#feed">Skip to gallery</a>
+    <header class="gallery-header">
+      <a class="gallery-brand" href="/" aria-label="Return to Suman Patari portfolio"><span>SP</span><strong>Suman Patari</strong></a>
+      <p>Gallery</p>
+      <a class="back-link" href="/">Portfolio <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="gallery-intro">
+        <div>
+          <p class="eyebrow">Visual journal</p>
+          <h1>Work, events,<br />and everything between.</h1>
+        </div>
+        <div class="intro-side">
+          <p>A chronological feed of projects, hackathons, behind-the-scenes progress, and moments worth keeping. The latest upload always appears first.</p>
+          <button class="upload-toggle" id="uploadToggle" type="button" aria-expanded="false" aria-controls="uploadPanel">Add a new post <span aria-hidden="true">＋</span></button>
+        </div>
+      </section>
+
+      <section class="upload-panel" id="uploadPanel" hidden>
+        <form id="uploadForm">
+          <div class="upload-heading"><div><p class="eyebrow">New post</p><h2>Share a moment.</h2></div><button class="close-upload" id="closeUpload" type="button" aria-label="Close upload panel">×</button></div>
+          <label class="drop-zone" id="dropZone">
+            <input id="mediaInput" name="media" type="file" accept="image/*,video/*" required />
+            <span class="drop-icon" aria-hidden="true">↑</span>
+            <strong id="fileLabel">Choose a photo or video</strong>
+            <small>JPG, PNG, WebP, GIF, MP4 or WebM · up to 50 MB</small>
+          </label>
+          <label class="caption-field"><span>Caption</span><textarea id="captionInput" name="caption" rows="4" maxlength="500" placeholder="What is happening here?" required></textarea><small><span id="captionCount">0</span>/500</small></label>
+          <div class="upload-actions"><p id="uploadStatus" role="status" aria-live="polite"></p><button class="publish-button" id="publishButton" type="submit">Publish post <span aria-hidden="true">↑</span></button></div>
+        </form>
+      </section>
+
+      <section class="feed-section" id="feed" aria-labelledby="feedTitle">
+        <div class="feed-heading"><div><p class="eyebrow">Latest first</p><h2 id="feedTitle">The feed</h2></div><p id="postCount">Loading posts…</p></div>
+        <div class="feed" id="galleryFeed" aria-live="polite">
+          <div class="loading-card"><span></span><p>Loading the gallery…</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="gallery-brand" href="/"><span>SP</span></a>
+      <p>© 2026 Suman Patari</p>
+      <nav aria-label="Social links">
+        <a data-gallery-social="linkedin" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a data-gallery-social="instagram" target="_blank" rel="noreferrer">Instagram ↗</a>
+      </nav>
+    </footer>
+    <script type="module" src="/src/gallery.js"></script>
+  </body>
+</html>
