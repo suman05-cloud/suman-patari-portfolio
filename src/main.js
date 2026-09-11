@@ -1,22 +1,10 @@
-const links = {
-  email: import.meta.env.VITE_EMAIL || "patarisuman2@gmail.com",
-  github: import.meta.env.VITE_GITHUB_URL || "https://github.com/suman05-cloud/",
-  linkedin: import.meta.env.VITE_LINKEDIN_URL || "",
-  leetcode: import.meta.env.VITE_LEETCODE_URL || "",
-  instagram: import.meta.env.VITE_INSTAGRAM_URL || "",
-  certificates: import.meta.env.VITE_CERTIFICATES_URL || "https://drive.google.com/drive/folders/1V3GEGdT7FZ-2z0vky4rRhoB2reTG2ajr",
-  saturday: import.meta.env.VITE_SATURDAY_URL || "",
-  runnova: import.meta.env.VITE_RUNNOVA_URL || "",
-  machineLearning: import.meta.env.VITE_ML_PROJECT_URL || "",
-  emailAssistant: import.meta.env.VITE_EMAIL_ASSISTANT_URL || "",
-  salon: import.meta.env.VITE_SALON_URL || "",
-};
+const links = window.PORTFOLIO_LINKS || {};
 
 const projects = [
   {
     title: "Saturday",
     type: "AI Agent · Featured",
-    image: "/img/project-saturday.png",
+    image: "./img/project-saturday.png",
     summary: "An autonomous AI agent designed to turn a goal into a sequence of useful actions across tools.",
     features: ["Breaks complex requests into clear tasks", "Coordinates browser, files, and APIs", "Keeps progress visible and recoverable"],
     tech: ["Python", "FastAPI", "LLM tool calling", "Agent orchestration"],
@@ -26,7 +14,7 @@ const projects = [
   {
     title: "Runnova",
     type: "Mobile Product · Founder",
-    image: "/img/project-runnova.png",
+    image: "./img/project-runnova.png",
     summary: "A mobile running companion that turns activity data into simple, motivating progress.",
     features: ["Tracks runs, routes, and performance trends", "Surfaces clear progress summaries", "Designed for fast, distraction-free use outdoors"],
     tech: ["Mobile app development", "Maps & location", "Activity analytics", "Product design"],
@@ -34,19 +22,19 @@ const projects = [
     url: links.runnova,
   },
   {
-    title: "Student Success Predictor",
-    type: "Machine Learning",
-    image: "/img/project-ml.png",
-    summary: "A machine learning system that identifies patterns connected to student outcomes and support needs.",
-    features: ["Cleans and transforms mixed student data", "Explains the signals behind each prediction", "Supports earlier, data-informed intervention"],
-    tech: ["Python", "scikit-learn", "Pandas", "Model evaluation"],
-    outcome: "A responsible applied-ML study centered on interpretable predictions rather than black-box scores.",
-    url: links.machineLearning,
+    title: "Online Book Store",
+    type: "Full-stack Web Application",
+    image: "./img/project-bookstore.png",
+    summary: "A complete online bookstore experience for discovering books, managing a cart, and placing orders.",
+    features: ["Searches and filters a structured book catalog", "Manages cart items and order totals", "Supports a clear checkout and order workflow"],
+    tech: ["HTML & CSS", "JavaScript", "SQL", "Backend APIs"],
+    outcome: "An end-to-end commerce project focused on clean catalog navigation, reliable data handling, and a simple purchase journey.",
+    url: links.bookstore,
   },
   {
     title: "AI Email Assistant",
     type: "AI Automation",
-    image: "/img/project_email_assistant.png",
+    image: "./img/project_email_assistant.png",
     summary: "A focused assistant for understanding inbox context, extracting actions, and drafting useful replies.",
     features: ["Summarizes long conversations", "Finds commitments and next steps", "Creates editable, context-aware drafts"],
     tech: ["Python", "FastAPI", "Gmail API", "OAuth"],
@@ -56,7 +44,7 @@ const projects = [
   {
     title: "Salon Queue",
     type: "Service Platform",
-    image: "/img/project_salon.png",
+    image: "./img/project_salon.png",
     summary: "A booking and live-queue experience that gives customers a more predictable salon visit.",
     features: ["Books services and time slots", "Shows live queue position", "Compares nearby salons and availability"],
     tech: ["Python", "FastAPI", "Google Maps API", "Responsive web"],
@@ -100,9 +88,16 @@ document.querySelectorAll("[data-contact]").forEach((element) => {
 
 const socialRow = document.querySelector("#socialRow");
 const socialLinks = [["Email", `mailto:${links.email}`], ["GitHub", links.github], ["LinkedIn", links.linkedin], ["LeetCode", links.leetcode], ["Instagram", links.instagram]];
+const socialIcons = {
+  Email: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.5h17v13h-17z"/><path d="m4.5 7 7.5 6 7.5-6"/></svg>',
+  GitHub: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8a9.4 9.4 0 0 0-3 18.3c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 0 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.7-1.4-2.3-.3-4.7-1.1-4.7-5a3.9 3.9 0 0 1 1-2.7c-.1-.3-.4-1.3.1-2.7 0 0 .9-.3 2.8 1a9.7 9.7 0 0 1 5.1 0c2-1.3 2.8-1 2.8-1 .6 1.4.2 2.4.1 2.7a3.9 3.9 0 0 1 1 2.7c0 3.9-2.4 4.8-4.7 5 .4.3.7 1 .7 1.9v2.9c0 .3.2.6.7.5A9.4 9.4 0 0 0 12 2.8Z" fill="currentColor" stroke="none"/></svg>',
+  LinkedIn: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 9.1v9.7M5.2 5.3v.1M9.5 18.8V9.1m0 4.2c.8-2.7 6.4-3.2 6.4 1.2v4.3M3.2 3.2h17.6v17.6H3.2z"/></svg>',
+  LeetCode: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13.4 3.2-7.3 7.2a4.8 4.8 0 0 0 0 6.8l1.2 1.2a4.8 4.8 0 0 0 6.8 0l2.3-2.3M9.2 7.4l3.2-3.2M8.7 13h10.1"/></svg>',
+  Instagram: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.7" r=".8" fill="currentColor" stroke="none"/></svg>'
+};
 socialRow.innerHTML = socialLinks.map(([label, url]) => url
-  ? `<a href="${url}" ${url.startsWith("mailto:") ? "" : 'target="_blank" rel="noreferrer"'}><span>${label}</span><span aria-hidden="true">↗</span></a>`
-  : `<span class="social-pending" aria-label="${label} link to be added"><span>${label}</span><small>Add URL</small></span>`).join("");
+  ? `<a href="${url}" ${url.startsWith("mailto:") ? "" : 'target="_blank" rel="noreferrer"'}><span class="social-name"><span class="social-icon">${socialIcons[label]}</span><span>${label}</span></span><span aria-hidden="true">↗</span></a>`
+  : `<span class="social-pending" aria-label="${label} link to be added"><span class="social-name"><span class="social-icon">${socialIcons[label]}</span><span>${label}</span></span><small>Add URL</small></span>`).join("");
 
 const dialog = document.querySelector("#projectDialog");
 const dialogLink = document.querySelector("#dialogLink");
@@ -140,5 +135,7 @@ menuButton.addEventListener("click", () => {
 });
 mobileNav.addEventListener("click", () => { mobileNav.classList.remove("open"); menuButton.setAttribute("aria-expanded", "false"); });
 
-const reveal = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add("is-visible"); reveal.unobserve(entry.target); } }), { threshold: 0.08 });
-document.querySelectorAll(".project-card, .feature-achievement, .certificate-card, .principles article").forEach((element) => { element.classList.add("reveal"); reveal.observe(element); });
+if ("IntersectionObserver" in window) {
+  const reveal = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add("is-visible"); reveal.unobserve(entry.target); } }), { threshold: 0.08 });
+  document.querySelectorAll(".project-card, .feature-achievement, .certificate-card, .principles article, .education-grid article, .skills-grid article").forEach((element) => { element.classList.add("reveal"); reveal.observe(element); });
+}

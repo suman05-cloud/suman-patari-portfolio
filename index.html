@@ -11,19 +11,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Suman Patari home"><span class="brand-mark">SP</span><span>Suman Patari</span></a>
       <nav class="desktop-nav" aria-label="Primary navigation">
-        <a href="#work">Work</a><a href="#about">About</a><a href="#achievements">Achievements</a><a class="gallery-nav-link" href="/gallery.html" target="_blank" rel="noreferrer">Gallery <span aria-hidden="true">↗</span></a><a href="#contact">Contact</a>
+        <a href="#work">Work</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#achievements">Achievements</a><a class="gallery-nav-link" href="./gallery/index.html" target="_blank" rel="noreferrer">Gallery <span aria-hidden="true">↗</span></a><a href="#contact">Contact</a>
       </nav>
       <a class="nav-cta" href="#contact">Let’s connect <span aria-hidden="true">↗</span></a>
       <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
       <nav class="mobile-nav" aria-label="Mobile navigation">
-        <a href="#work">Work</a><a href="#about">About</a><a href="#achievements">Achievements</a><a href="/gallery.html" target="_blank" rel="noreferrer">Gallery ↗</a><a href="#contact">Contact</a>
+        <a href="#work">Work</a><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#achievements">Achievements</a><a href="./gallery/index.html" target="_blank" rel="noreferrer">Gallery ↗</a><a href="#contact">Contact</a>
       </nav>
     </header>
 
@@ -45,7 +45,7 @@
         </div>
         <div class="portrait-card" aria-label="Portrait of Suman Patari">
           <div class="portrait-top"><span>Based in Chennai, India</span><span>2026 portfolio</span></div>
-          <div class="portrait-frame"><img src="/img/profile_avatar.png" alt="Suman Patari" /></div>
+          <div class="portrait-frame"><img src="./img/profile_avatar.png" alt="Suman Patari" /></div>
           <div class="portrait-note"><span class="mini-mark">SP</span><p><strong>Building at the intersection</strong><br />of AI, software, and products.</p></div>
         </div>
       </section>
@@ -71,6 +71,30 @@
             <article><span>02</span><h3>Build end to end</h3><p>Connect models, services, and interfaces into one usable product.</p></article>
             <article><span>03</span><h3>Keep it human</h3><p>Make powerful systems understandable, calm, and accessible.</p></article>
           </div>
+        </div>
+      </section>
+
+      <section class="section education-section" id="education">
+        <div class="section-heading">
+          <div><p class="kicker">Education</p><h2>Learning with direction.</h2></div>
+          <p>A strong academic foundation, now focused on intelligent systems and practical software engineering.</p>
+        </div>
+        <div class="education-grid">
+          <article class="education-primary">
+            <div class="education-year">Present</div>
+            <div><p class="education-label">Undergraduate</p><h3>SRM Institute of Science and Technology</h3><p>B.Tech in Computer Science and Engineering with specialization in Artificial Intelligence &amp; Machine Learning.</p></div>
+          </article>
+          <article class="score-card"><strong>96%</strong><span>Class 10</span><p>Secondary school academic score</p></article>
+          <article class="score-card"><strong>86%</strong><span>Class 12</span><p>Higher secondary academic score</p></article>
+        </div>
+      </section>
+
+      <section class="section skills-section" id="skills">
+        <div class="skills-heading"><p class="kicker">Skills</p><h2>A practical toolkit for building.</h2></div>
+        <div class="skills-grid">
+          <article><span>01</span><h3>Programming</h3><ul><li>Python</li><li>C++</li><li>Java · Basic</li><li>SQL</li></ul></article>
+          <article><span>02</span><h3>AI &amp; machine learning</h3><ul><li>Supervised learning</li><li>Data preprocessing</li><li>Model evaluation</li><li>LLM &amp; agent workflows</li></ul></article>
+          <article><span>03</span><h3>Tools &amp; libraries</h3><ul><li>Pandas &amp; NumPy</li><li>scikit-learn</li><li>FastAPI</li><li>Git &amp; GitHub</li></ul></article>
         </div>
       </section>
 
@@ -110,6 +134,7 @@
       </div>
     </dialog>
 
-    <script type="module" src="/src/main.js"></script>
+    <script src="./config.js"></script>
+    <script src="./src/main.js"></script>
   </body>
 </html>
